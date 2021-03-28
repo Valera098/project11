@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row" #indicatorContainer>
+    <ng-container *ngFor="let card of cards">
+      <indicator-component
+        class="col-sm-12 col-md-6 col-lg-3"
+        [id]="card.id"
+        [name]="card.name ? card.name : 'Test ' + card.id"
+        [isOnline]="card.status"
+        [parent]="cards"
+      ></indicator-component>
+    </ng-container>
+  </div>
+  <div class="form-group row">
+    <input class="form-control col-5" type="text" #name placeholder="Имя"/>
+    <select class="form-control col-5" #status required>
+      <option value="true">Включен</option>
+      <option value="false">Выключен</option>
+    </select>
+    <button (click)="createIndicator()" type="submit"
+            class="btn btn-primary col-2 float-right">
+            Добавить
+    </button>
+  </div>
+</div>

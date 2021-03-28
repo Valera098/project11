@@ -1,0 +1,8 @@
+<div class="card m-1"
+    [style.background-color]="isOnline ? 'green' : 'red'">
+  <div class="card-body">
+    <h5 class="card-title">#{{ id }}</h5>
+    <p class="card-text">{{ name }}</p>
+    <button (click)="deleteSelf()" class="btn btn-primary">Удалить</button>
+  </div>
+</div>
